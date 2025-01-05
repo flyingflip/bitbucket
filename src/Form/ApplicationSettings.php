@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fitbit\Form;
+namespace Drupal\bitbucket\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;

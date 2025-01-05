@@ -4,14 +4,14 @@ namespace Drupal\bitbucket;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 
-class FitbitClientFactory {
+class BitbucketClientFactory {
 
   /**
-   * Create an instance of FitbitClient.
+   * Create an instance of BitbucketClient.
    *
    * @param ConfigFactoryInterface $config_factory
    *
-   * @return FitbitClient
+   * @return BitbucketClient
    */
   public static function create(ConfigFactoryInterface $config_factory) {
     $config = $config_factory->get('bitbucket.application_settings');
@@ -19,6 +19,6 @@ class FitbitClientFactory {
       'clientId' => $config->get('client_id'),
       'clientSecret' => $config->get('client_secret'),
     ];
-    return new FitbitClient($options);
+    return new BitbucketClient($options);
   }
 }

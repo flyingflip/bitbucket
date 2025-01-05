@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fitbit;
+namespace Drupal\bitbucket;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Utility\Error;

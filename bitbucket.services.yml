@@ -1,9 +1,9 @@
 services:
   bitbucket.access_token_manager:
-    class: Drupal\bitbucket\FitbitAccessTokenManager
+    class: Drupal\bitbucket\BitbucketAccessTokenManager
     arguments: ['@database', '@bitbucket.client']
   bitbucket.client:
-    class: Drupal\bitbucket\FitbitClient
+    class: Drupal\bitbucket\BitbucketClient
     factory: bitbucket.client_factory:create
     arguments: ['@config.factory']
   bitbucket.client_factory:

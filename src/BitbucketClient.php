@@ -71,7 +71,7 @@ class BitbucketClient extends Bitbucket {
    * @param string $resource
    *   Path to the resource on the API. Should include a leading /.
    * @param AccessToken $access_token
-   *   Fitbit AccessToken object.
+   *   Bitbucket AccessToken object.
    *
    * @return mixed|null
    *   API response or null in the case of an exception, which can happen if the
@@ -84,7 +84,7 @@ class BitbucketClient extends Bitbucket {
     }
     $request = $this->getAuthenticatedRequest(
       Bitbucket::METHOD_GET,
-      Bitbucket::BASE_FITBIT_API_URL . $resource,
+      Bitbucket::BASE_BITBUCKET_API_URL . $resource,
       $access_token,
       $options
     );
