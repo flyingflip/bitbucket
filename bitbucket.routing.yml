@@ -1,0 +1,25 @@
+bitbucket.application_settings:
+  path: '/admin/config/services/bitbucket'
+  defaults:
+    _form: 'Drupal\bitbucket\Form\ApplicationSettings'
+    _title: 'Bitbucket Application Settings'
+  requirements:
+    _permission: 'administer site configuration'
+bitbucket.user_settings:
+  path: '/user/{user}/bitbucket'
+  defaults:
+    _form: 'Drupal\bitbucket\Form\BitbucketUserSettings'
+    _title: 'Bitbucket'
+  requirements:
+    _permission: 'authorize bitbucket account'
+  options:
+    parameters:
+      user:
+        type: entity:user
+bitbucket.authorization:
+  path: '/bitbucket-authorization'
+  defaults:
+    _controller: 'Drupal\bitbucket\Controller\Authorization::authorize'
+    _title: 'Bitbucket authorization'
+  requirements:
+    _custom_access: 'Drupal\bitbucket\Controller\Authorization:checkAccess'
