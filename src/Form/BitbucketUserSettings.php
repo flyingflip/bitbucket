@@ -72,8 +72,9 @@ class BitbucketUserSettings extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, AccountInterface $user) {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     // Store the uid on the form object.
+    $user = \Drupal::currentUser();
     $form['uid'] = [
       '#type' => 'value',
       '#value' => $user->id(),
