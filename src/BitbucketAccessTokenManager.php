@@ -10,11 +10,11 @@ use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 
 /**
- * CRUD operations for the fitbit_user_access_tokens table.
+ * CRUD operations for the bitbucket_user_access_tokens table.
  */
-class FitbitAccessTokenManager {
+class BitbucketAccessTokenManager {
 
-  const TOKEN_TABLE = 'fitbit_user_access_tokens';
+  const TOKEN_TABLE = 'bitbucket_user_access_tokens';
 
   /**
    * Database connection.
@@ -24,21 +24,21 @@ class FitbitAccessTokenManager {
   protected $connection;
 
   /**
-   * Fitbit client.
+   * Bitbucket client.
    *
-   * @var \Drupal\fitbit\FitbitClient
+   * @var \Drupal\bitbucket\BitbucketClient
    */
-  protected $fitbitClient;
+  protected $bitbucketClient;
 
   /**
-   * FitbitAccessTokenManager constructor.
+   * BitbucketAccessTokenManager constructor.
    *
    * @param Connection $connection
-   * @param FitbitClient $fitbit_client
+   * @param BitbucketClient $bitbucket_client
    */
-  public function __construct(Connection $connection, FitbitClient $fitbit_client) {
+  public function __construct(Connection $connection, BitbucketClient $bitbucket_client) {
     $this->connection = $connection;
-    $this->fitbitClient = $fitbit_client;
+    $this->bitbucketClient = $bitbucket_client;
   }
 
   /**
@@ -82,7 +82,7 @@ class FitbitAccessTokenManager {
           // Check if the access_token is expired. If it is, refresh it and save
           // it to the database.
           if ($access_token->hasExpired()) {
-            $access_token = $this->fitbitClient->getAccessToken('refresh_token', ['refresh_token' => $raw_token['refresh_token']]);
+            $access_token = $this->bitbucketClient->getAccessToken('refresh_token', ['refresh_token' => $raw_token['refresh_token']]);
 
             $this->save($raw_token['uid'], [
               'access_token' => $access_token->getToken(),
@@ -95,7 +95,7 @@ class FitbitAccessTokenManager {
           $access_tokens[$raw_token['uid']] = $access_token;
         }
         catch (IdentityProviderException $e) {
-          $logger = \Drupal::logger('fitbit');
+          $logger = \Drupal::logger('bitbucket');
           Error::logException($logger, $exception);
         }
       }

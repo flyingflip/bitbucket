@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Class ApplicationSettings.
  *
- * @package Drupal\fitbit\Form
+ * @package Drupal\bitbucket\Form
  */
 class ApplicationSettings extends ConfigFormBase {
 
@@ -33,14 +33,14 @@ class ApplicationSettings extends ConfigFormBase {
     $config = $this->config('bitbucket.application_settings');
 
     $instructions = <<<INSTRUCTIONS
-<p>In order to communicate with the Fitbit API, you need to create a Fitbit Application, enter in the application parameters below, and have your users connect their Fitbit accounts. Follow these steps:</p>
+<p>In order to communicate with the Bitbucket API, you need to create a Bitbucket Application, enter in the application parameters below, and have your users connect their Bitbucket accounts. Follow these steps:</p>
 <ol>
-  <li>Visit https://dev.fitbit.com/apps/new and follow the steps to create a new application. If you already have an application, skip to the next step.</li>
-  <li>Go to https://dev.fitbit.com/apps and click on the name of your application.</li>
+  <li>Visit https://dev.bitbucket.com/apps/new and follow the steps to create a new application. If you already have an application, skip to the next step.</li>
+  <li>Go to https://dev.bitbucket.com/apps and click on the name of your application.</li>
   <li>Copy and paste the OAuth 2.0 Client ID and Client Secret into the fields below.</li>
   <li>Save the settings.</li>
-  <li>Instruct your users to visit <em>/user/[uid]/fitbit</em> and follow the steps there to connect their Fitbit accounts.</li>
-  <li>At this point you should be able to build views with the Fitbit views module, or otherwise use the services provided if your a module developer basing your code on fitbit module.</li>
+  <li>Instruct your users to visit <em>/user/[uid]/bitbucket</em> and follow the steps there to connect their Bitbucket accounts.</li>
+  <li>At this point you should be able to build views with the Bitbucket views module, or otherwise use the services provided if your a module developer basing your code on bitbucket module.</li>
 </ol>
 INSTRUCTIONS;
 
@@ -51,13 +51,13 @@ INSTRUCTIONS;
     $form['client_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('OAuth 2.0 Client ID'),
-      '#description' => $this->t('Enter the OAuth 2.0 Client ID from your <a href="https://dev.fitbit.com/apps">Fitbit application settings</a>.'),
+      '#description' => $this->t('Enter the OAuth 2.0 Client ID from your <a href="https://dev.bitbucket.com/apps">Bitbucket application settings</a>.'),
       '#default_value' => $config->get('client_id'),
     ];
     $form['client_secret'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Client secret'),
-      '#description' => $this->t('Enter the Client Secret from your <a href="https://dev.fitbit.com/apps">Fitbit application settings</a>.'),
+      '#description' => $this->t('Enter the Client Secret from your <a href="https://dev.bitbucket.com/apps">Bitbucket application settings</a>.'),
       '#default_value' => $config->get('client_secret'),
     ];
 
