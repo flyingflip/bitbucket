@@ -133,20 +133,9 @@ class BitbucketClient extends Bitbucket {
   }
 
   /**
-   * Ensure that the redirectUri param is set. Way to get around inability to
-   * use Url::toString() during a router rebuild.
-   */
-  protected function ensureRedirectUri() {
-    if (!isset($this->redirectUri)) {
-      $this->redirectUri = Url::fromRoute('bitbucket.authorization', [], ['absolute' => TRUE])->toString();
-    }
-  }
-
-  /**
    * {@inheritdoc}
    */
   protected function getAuthorizationParameters(array $options) {
-    $this->ensureRedirectUri();
     return parent::getAuthorizationParameters($options);
   }
 
@@ -154,7 +143,6 @@ class BitbucketClient extends Bitbucket {
    * {@inheritdoc}
    */
   public function getAccessToken($grant, array $options = []) {
-    $this->ensureRedirectUri();
     return parent::getAccessToken($grant, $options);
   }
 }
