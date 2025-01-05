@@ -15,7 +15,6 @@
   ],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/flyingflip/bitbucket",
-  "minimum-stability": "dev",
   "require": {
     "flyingflip/oauth2-bitbucket": "dev-main"
   }
