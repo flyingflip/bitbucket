@@ -82,7 +82,7 @@ class Authorization extends ControllerBase {
   }
 
   /**
-   * Receive the authorization code from a Fitibit Authorization Code Flow
+   * Receive the authorization code from a Bitbucket Authorization Code Flow
    * redirect, and request an access token from Bitbucket.
    */
   public function authorize() {
