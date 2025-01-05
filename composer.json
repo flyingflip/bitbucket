@@ -7,6 +7,12 @@
     "Bitbucket",
     "OAuth2"
   ],
+  "repositories": [
+    {
+      "url": "https://github.com/flyingflip/oauth2-bitbucket.git",
+      "type": "git"
+    }
+  ],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/flyingflip/bitbucket",
   "minimum-stability": "dev",
