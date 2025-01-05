@@ -72,7 +72,7 @@ class BitbucketUserSettings extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, AccountInterface $user = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, AccountInterface $user) {
     // Store the uid on the form object.
     $form['uid'] = [
       '#type' => 'value',
@@ -173,7 +173,7 @@ class BitbucketUserSettings extends FormBase {
    *
    * @return AccessResult
    */
-  public function checkAccess(AccountInterface $account, UserInterface $user = NULL) {
+  public function checkAccess(AccountInterface $account, UserInterface $user) {
     // Only allow access if user has authorize bitbucket account and it's their
     // own page.
     return AccessResult::allowedIf($account->hasPermission('authorize bitbucket account') && $account->id() === $user->id());
