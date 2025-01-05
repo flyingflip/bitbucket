@@ -1,16 +1,16 @@
 {
-  "name": "flyingflip/fitbit",
-  "type": "skatetrack-app",
-  "description": "Fitbit API wrapper module for connecting to Fitbit.",
+  "name": "flyingflip/bitbucket",
+  "type": "drupal-module",
+  "description": "Bitbucket API wrapper module for connecting to Bitbucket.",
   "keywords": [
     "Drupal",
-    "Fitbit",
+    "Bitbucket",
     "OAuth2"
   ],
   "license": "GPL-2.0+",
-  "homepage": "https://github.com/flyingflip/fitbit",
+  "homepage": "https://github.com/flyingflip/bitbucket",
   "minimum-stability": "dev",
   "require": {
-    "flyingflip/oauth2-fitbit": "~1.2.0"
+    "flyingflip/oauth2-bitbucket": "dev-main"
   }
 }
