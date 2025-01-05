@@ -1,0 +1,16 @@
+{
+  "name": "flyingflip/fitbit",
+  "type": "skatetrack-app",
+  "description": "Fitbit API wrapper module for connecting to Fitbit.",
+  "keywords": [
+    "Drupal",
+    "Fitbit",
+    "OAuth2"
+  ],
+  "license": "GPL-2.0+",
+  "homepage": "https://github.com/flyingflip/fitbit",
+  "minimum-stability": "dev",
+  "require": {
+    "flyingflip/oauth2-fitbit": "~1.2.0"
+  }
+}

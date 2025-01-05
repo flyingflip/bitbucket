@@ -1,0 +1,4 @@
+bitbucket.user_settings:
+  route_name: bitbucket.user_settings
+  base_route: entity.user.canonical
+  title: 'Bitbucket'

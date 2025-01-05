@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Contains fitbit.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bitbucket_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the fitbit module.
+    case 'help.page.bitbucket':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Bitbucket API wrapper module for connecting to Bitbucket.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bitbucket_theme($existing, $type, $theme, $path) {
+  $items = [];
+
+  $items['bitbucket_badge'] = [
+    'variables' => [
+      'raw_badge' => NULL,
+      'image' => NULL,
+    ],
+  ];
+
+  return $items;
+}
+
+/**
+ * Template preprocessor for bitbucket_badge.
+ *
+ * @param $variables
+ */
+function template_preprocess_bitbucket_badge(&$variables) {
+  $raw_badge = $variables['raw_badge'];
+
+  $variables['image'] = [
+    '#theme' => 'image',
+    '#uri' => $variables['image'],
+    '#alt' => $raw_badge->name,
+  ];
+
+  $variables['name'] = $raw_badge->name;
+}

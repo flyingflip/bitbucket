@@ -1,0 +1,5 @@
+bitbucket.application_settings:
+  title: Bitbucket application settings
+  parent: system.admin_config_services
+  description: 'Configure Bitbucket application settings.'
+  route_name: bitbucket.application_settings

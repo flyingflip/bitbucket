@@ -1,0 +1,6 @@
+name: Bitbucket
+type: module
+description: Bitbucket API wrapper module for connecting to Bitbucket.
+core_version_requirement: ^11
+version: 0.1.0
+package: Other
